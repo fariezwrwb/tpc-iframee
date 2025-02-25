@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TPC2</title>
+    <style>
+       /* Fun background with a light pattern */
+/* Body with gray background */
+body {
+    font-family: 'Arial', sans-serif; /* Unified font for all text */
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0; /* Light gray background */
+}
+
+/* Header with dark gray */
+.header {
+    background-color: #3b3b3b; /* Dark gray header */
+    color: white;
+    text-align: center;
+    padding: 20px;
+    font-size: 30px;
+    font-weight: bold;
+    border-bottom: 5px solid #7f7f7f; 
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    animation: bounceIn 1.5s ease-out;
+}
+
+/* Header animation (gentle bouncing effect) */
+@keyframes bounceIn {
+    0% {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Container with flexible layout */
+.container {
+    display: flex;
+    padding: 30px;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+/* Video container with soft border */
+.video-container {
+    flex: 3;
+    padding-right: 15px;
+}
+
+.video-container iframe {
+    width: 90%;
+    height: 480px;
+    border: 5px solid #7f7f7f; /* Lighter gray border for video */
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+/* Hover effect for video (slightly enlarges on hover) */
+.video-container iframe:hover {
+    transform: scale(1.05);
+}
+
+/* Container for buttons with space between */
+.prestasi-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Buttons with gray and hover effect */
+.prestasi {
+    background-color: #7f7f7f; /* Medium gray */
+    padding: 20px 40px;
+    border-radius: 20px;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+    animation: fadeInUp 1.5s ease-out;
+}
+
+/* Button hover effect */
+.prestasi:hover {
+    background-color: #5e5e5e; /* Darker gray when hovered */
+    transform: scale(1.1);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Button active effect (slightly shrink when clicked) */
+.prestasi:active {
+    transform: scale(0.95);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Fade-in animation for buttons */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Footer with gray color */
+footer {
+    background-color: #3b3b3b; /* Dark gray footer */
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+    font-size: 20px;
+    
+    box-shadow: 0 10px 20px rgba(3, 4, 5, 7.2);
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    
+   
+    
+    transition: transform 0.3s ease, box-shadow 0.3s ease,  0.3s ease;
+    animation: fadeInUp 1.5s ease-out;
+}
+
+/* Fade-in animation for buttons */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    
+}
+
+/* Marquee text style */
+footer marquee {
+    font-size: 18px;
+    color: white;
+    font-weight: bold;
+    transform: scale(1.1);
+ /* Fade-in animation for buttons */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+      
+        transition: transform 0.3s ease, box-shadow 0.3s ease, 0.3s ease;
+    animation: fadeInUp 1.5s ease-out;
+    }
+}
+
+
+    
+    </style>
+</head>
+
+<body>
+    <div class="header">Video Edukasi</div>
+    <div class="container">
+        <div class="video-container">
+            <iframe id="mainVideo" src="https://www.youtube.com/embed/MYSMXknVKMo?si=BJOctmK1SkWuTbYw"
+                allowfullscreen></iframe>
+        </div>
+        <div class="prestasi-container">
+            <button class="prestasi" onclick="changeVideo('MYSMXknVKMo')">Tragedi 98</button>
+            <button class="prestasi" onclick="changeVideo('rc5MI1qSMBU')">Perang Dunia</button>
+            <button class="prestasi" onclick="changeVideo('IVgPscVD1eE')">Tragedi Dukun</button>
+            <button class="prestasi" onclick="changeVideo('FqV2GgH3jT0')">Perang Salib</button>
+            <button class="prestasi" onclick="changeVideo('Cdm-gdUX0nw')">Tragedi Petrus</button>
+        </div>
+    </div>
+
+    <footer>
+        <marquee>Selamat Datang di Website Edukasi Video! 🎉 Lihat Berbagai Video Untuk Memahami Sejarah</marquee>
+    </footer>
+
+    <script>
+        function changeVideo(videoId) {
+            let mainVideo = document.getElementById("mainVideo");
+            mainVideo.src = "https://www.youtube.com/embed/" + videoId + "?autoplay=1";
+        }
+    </script>
+</body>
+
+</html>
